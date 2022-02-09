@@ -23,6 +23,7 @@
 
     .credit a {
       color: #ffffff;
+      margin: 0 5px;
     }
 
     .credit {
@@ -84,13 +85,23 @@
     }
 
     .formContainer ul li input:focus {
-      border: 2px solid #4E89CF;
+      border: 1px solid #4E89CF;
       outline: #4E89CF;
     }
 
     .formDesc {
       flex-grow: 1;
       padding: 50px;
+    }
+
+    h2 {
+      font-weight: normal;
+    }
+
+    .passwordsNoMatch {
+      color: red;
+      font-size: 12px;
+      display: none;
     }
     
     .createAccountContainer {
@@ -110,6 +121,12 @@
       padding-right: 60px;
       font-size: 16px;
       font-weight: bold;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+    
+    .createAccountContainer button:hover {
+      background-color: #71a2e2;
     }
 
     .formTitle {
@@ -128,8 +145,10 @@
     }
 
 
-    
+
   </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 
@@ -144,6 +163,7 @@
           <h2>
             This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up now to get started.
             <br />
+            <br />
             You <i>know</i> you want to.
           </h2>
         </div>
@@ -153,34 +173,35 @@
           <ul>
             <div>
               <li>
-                <label for="name">FIRST NAME</label><br />
-                <input type="text" id="name" name="user_name">
+                <label for="first_name">FIRST NAME</label><br />
+                <input type="text" id="first_name" name="first_name">
               </li>
               <li>
-                <label for="name">LAST NAME</label><br />
-                <input type="text" id="name" name="user_name">
-              </li>
-            </div>
-
-            <div>
-              <li>
-                <label for="name">EMAIL</label><br />
-                <input type="mail" id="name" name="user_name">
-              </li>
-              <li>
-                <label for="name">PHONE NUMBER</label><br />
-                <input type="tel" id="name" name="user_name">
+                <label for="last_name">LAST NAME</label><br />
+                <input type="text" id="last_name" name="last_name">
               </li>
             </div>
 
             <div>
               <li>
-                <label for="name">PASSWORD</label><br />
-                <input type="password" id="name" name="user_name">
+                <label for="email">EMAIL</label><br />
+                <input type="mail" id="email" name="email">
               </li>
               <li>
-                <label for="name">CONFIRM PASSWORD</label><br />
-                <input type="password" id="name" name="user_name">
+                <label for="phone">PHONE NUMBER</label><br />
+                <input type="tel" id="phone" name="phone">
+              </li>
+            </div>
+
+            <div>
+              <li>
+                <label for="password">PASSWORD</label><br />
+                <input type="password" id="password" name="password">
+                <span class="passwordsNoMatch">* Passwords do not match</span>
+              </li>
+              <li>
+                <label for="confirm_password">CONFIRM PASSWORD</label><br />
+                <input type="password" id="confirm_password" name="confirm_password">
               </li>
             </div>
 
@@ -189,16 +210,31 @@
         </div>
 
         <div class="createAccountContainer">
-          <button type="submit" name="create-account">Create Account</button>
-          <span>
+          <button type="button" name="create-account">Create Account</button>
+          <div>
             Already have an account?
             <a href="/">Log in</a>
-          </span>
+          </div>
         </div>
       </form>
    </main>
 
-   <script></script>
+   <script>
+     $(document).ready(function () {
+        $('#password, #confirm_password').on('keyup', function () {
+          if ($('#confirm_password').val() !== $('#password').val()) {
+            $('#password').css("border-color", "red")
+            $('#confirm_password').css("border-color", "red")
+            $('.passwordsNoMatch').css("display", "inline")
+            console.log('passwords do not match')
+          } else {
+            $('#password').css("border-color", "lightgray")
+            $('#confirm_password').css("border-color", "lightgray")
+            $('.passwordsNoMatch').css("display", "none")
+          }
+        })
+     })
+   </script>
 
 
 </body>
