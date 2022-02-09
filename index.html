@@ -6,15 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
     * {
       margin: 0;
       box-sizing: border-box;
     }
 
+    .logoContainer {
+      margin-top: 40%;
+      width: 100%;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Comfortaa;
+      font-size: 40px;
+      width: 100%;
+      background-color: rgba(0,0,0,0.4);
+      padding: 10px;
+    }
+
+    .logo img {
+      width: 100px;
+    }
+
     .container {
       height: 100vh;
       width: 100vw;
-      max-height: 100vw;
+      max-height: 100%;
       max-width: 100%;
       display: grid;
       grid-template-columns: 1fr 3fr;
@@ -32,10 +54,15 @@
       background-size: cover;
       height: 100%;
       display: flex;
-      justify-content: center;
-      align-items: flex-end;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
       color: #ffffff;
       font-size: 14px;
+    }
+
+    .creditFooter {
+      text-align: center;
       padding: 10px;
     }
 
@@ -155,8 +182,16 @@
    <main class="container">
 
     <div class="credit">
-      Photo by <a href="https://unsplash.com/@zhangzui">张 嘴
-      </a> on <a href="https://unsplash.com/">Unsplash</a>
+      <div class="logoContainer">
+        <div class="logo">
+          <img src="/odin-lined.png" />
+          <span>ODIN</span>
+        </div>
+      </div>
+      <div class="creditFooter">
+        Photo by <a href="https://unsplash.com/@zhangzui">张 嘴
+        </a> on <a href="https://unsplash.com/">Unsplash</a>
+      </div>
     </div>
       <form action="/my-handling-form-page" method="post" class="formContainer">
         <div class="formDesc">
