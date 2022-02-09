@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      height: 100vh;
+      max-height: 100%;
+      width: 100vw;
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      font-family: sans-serif;
+    }
+
+    a {
+      color: #ffffff;
+    }
+
+    .credit {
+      background-image: url(/unsplash_winter.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      color: #ffffff;
+      font-size: 14px;
+      padding: 10px;
+    }
+
+    .formContainer {
+      display: grid;
+      grid-template-rows: 2fr 1fr 2fr;
+    }
+
+    .middleContainer {
+      display: inline-block;
+      background-color: #ffffff;
+      box-shadow: 3px 3px 10px gray;
+      padding: 20px;
+    }
+
+    .formContainer ul {
+      list-style-type: none;
+    }
+    
+    .createAccountContainer {
+      padding: 40px;
+    }
+
+    .createAccountContainer button {
+      background-color: #84B1EA;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      padding: 20px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+
+    
+  </style>
+</head>
+<body>
+
+   <main class="container">
+
+    <div class="credit">
+      Photo by <a href="https://unsplash.com/@zhangzui">张 嘴
+      </a> on <a href="https://unsplash.com/">Unsplash</a>
+    </div>
+      <form action="/my-handling-form-page" method="post" class="formContainer">
+        <div class="">
+          <h2>
+            This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up now to get started.
+            <br />
+            You <i>know</i> you want to.
+          </h2>
+        </div>
+
+        <div class="middleContainer">
+          <ul>
+            <li>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="user_name">
+            </li>
+            <li>
+              <label for="mail">E-mail:</label>
+              <input type="email" id="mail" name="user_email">
+            </li>
+            <li>
+              <label for="msg">Message:</label>
+              <textarea id="msg" name="user_message"></textarea>
+            </li>
+      
+            <li class="button">
+            <button type="submit">Send your message</button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="createAccountContainer">
+          <button type="submit" name="create-account">Create Account</button>
+          <label for="create-account"></label>
+        </div>
+      </form>
+   </main>
+
+
+</body>
+</html>
