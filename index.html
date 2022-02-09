@@ -13,15 +13,15 @@
 
     .container {
       height: 100vh;
-      max-height: 100%;
       width: 100vw;
+      max-height: 100vw;
       max-width: 100%;
       display: grid;
       grid-template-columns: 1fr 3fr;
       font-family: sans-serif;
     }
 
-    a {
+    .credit a {
       color: #ffffff;
     }
 
@@ -39,23 +39,65 @@
     }
 
     .formContainer {
-      display: grid;
-      grid-template-rows: 2fr 1fr 2fr;
+      display: flex;
+      flex-direction: column;
     }
 
     .middleContainer {
       display: inline-block;
       background-color: #ffffff;
       box-shadow: 3px 3px 10px gray;
-      padding: 20px;
+      padding: 50px;
+      padding-top: 20px;
+      padding-bottom: 20px;
     }
 
     .formContainer ul {
       list-style-type: none;
+      padding: 0;
+      width: 75%;
+    }
+
+    .formContainer ul div {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 20px;
+    }
+
+    .formContainer ul:last-child {
+      margin-bottom: 0px;
+    }
+
+    .formContainer ul li label {
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .formContainer ul li input {
+      border: 1px solid lightgray;
+      border-radius: 5px;
+      padding: 6px;
+      width: 100%;
+    }
+
+    .formContainer ul li input:focus {
+      border: 2px solid #4E89CF;
+      outline: #4E89CF;
+    }
+
+    .formDesc {
+      flex-grow: 1;
+      padding: 50px;
     }
     
     .createAccountContainer {
-      padding: 40px;
+      flex-grow: 1;
+      padding: 50px;
+      padding-top: 30px;
+      padding-bottom: 30px;
     }
 
     .createAccountContainer button {
@@ -63,9 +105,26 @@
       color: #ffffff;
       border: none;
       border-radius: 10px;
-      padding: 20px;
+      padding: 15px;
+      padding-left: 60px;
+      padding-right: 60px;
       font-size: 16px;
       font-weight: bold;
+    }
+
+    .formTitle {
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .createAccountContainer a {
+      color: #84B1EA;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .createAccountContainer a:hover {
+      text-decoration: underline;
     }
 
 
@@ -81,7 +140,7 @@
       </a> on <a href="https://unsplash.com/">Unsplash</a>
     </div>
       <form action="/my-handling-form-page" method="post" class="formContainer">
-        <div class="">
+        <div class="formDesc">
           <h2>
             This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up now to get started.
             <br />
@@ -90,32 +149,56 @@
         </div>
 
         <div class="middleContainer">
+          <h2 class="formTitle">Let's do this!</h2>
           <ul>
-            <li>
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="user_name">
-            </li>
-            <li>
-              <label for="mail">E-mail:</label>
-              <input type="email" id="mail" name="user_email">
-            </li>
-            <li>
-              <label for="msg">Message:</label>
-              <textarea id="msg" name="user_message"></textarea>
-            </li>
-      
-            <li class="button">
-            <button type="submit">Send your message</button>
-            </li>
+            <div>
+              <li>
+                <label for="name">FIRST NAME</label><br />
+                <input type="text" id="name" name="user_name">
+              </li>
+              <li>
+                <label for="name">LAST NAME</label><br />
+                <input type="text" id="name" name="user_name">
+              </li>
+            </div>
+
+            <div>
+              <li>
+                <label for="name">EMAIL</label><br />
+                <input type="mail" id="name" name="user_name">
+              </li>
+              <li>
+                <label for="name">PHONE NUMBER</label><br />
+                <input type="tel" id="name" name="user_name">
+              </li>
+            </div>
+
+            <div>
+              <li>
+                <label for="name">PASSWORD</label><br />
+                <input type="password" id="name" name="user_name">
+              </li>
+              <li>
+                <label for="name">CONFIRM PASSWORD</label><br />
+                <input type="password" id="name" name="user_name">
+              </li>
+            </div>
+
+
           </ul>
         </div>
 
         <div class="createAccountContainer">
           <button type="submit" name="create-account">Create Account</button>
-          <label for="create-account"></label>
+          <span>
+            Already have an account?
+            <a href="/">Log in</a>
+          </span>
         </div>
       </form>
    </main>
+
+   <script></script>
 
 
 </body>
